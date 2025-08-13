@@ -48,7 +48,7 @@ Create fluent-bit configuration file as follows:
 [FILTER]
     Name   wasm
     match  dummy.*
-    WASM_Path /root/github/fluent-bit/examples/filter_rust/target/wasm32-wasip1/release/flb_filter_wasm.wasm
+    WASM_Path /root/github/flb-filter-wasm/target/wasm32-wasip1/release/flb_filter_wasm.wasm
     Function_Name rust_filter
     Accessible_Paths .,/etc/fluent-bit
 
@@ -60,7 +60,7 @@ Create fluent-bit configuration file as follows:
 
 ## use wasm config
 - the config_name must be `flb_filter_wasm_config`
-config_name = "/etc/fluent-bit/flb_filter_wasm_config.yaml"
+- config_name = "/etc/fluent-bit/flb_filter_wasm_config.yaml"
 
 ```yaml
 log_level: info
