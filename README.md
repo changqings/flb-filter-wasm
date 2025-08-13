@@ -35,23 +35,35 @@ Create fluent-bit configuration file as follows:
 [SERVICE]
     Flush        1
     Daemon       Off
-    Log_Level    info
+    Log_Level    Info
     HTTP_Server  Off
     HTTP_Listen  0.0.0.0
     HTTP_Port    2020
 
 [INPUT]
     Name dummy
+    Dummy {"hello":"from_dummy"}
     Tag  dummy.local
 
 [FILTER]
     Name   wasm
     match  dummy.*
-    WASM_Path /path/to/flb-filter-wasm.wasm
+    WASM_Path /root/github/fluent-bit/examples/filter_rust/target/wasm32-wasip1/release/flb_filter_wasm.wasm
     Function_Name rust_filter
-    accessible_paths /etc/fluent-bit
+    Accessible_Paths .,/etc/fluent-bit
+
 
 [OUTPUT]
     Name  stdout
     Match *
 ```
+
+## use wasm config
+- the config_name must be `flb_filter_wasm_config`
+config_name = "/etc/fluent-bit/flb_filter_wasm_config.yaml"
+
+```yaml
+log_level: info
+name: my_wasm
+```
+
