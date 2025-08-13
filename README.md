@@ -1,11 +1,9 @@
-# Fluent Bit / filter_rust
-
-This source source tree provides an example of WASM program with WASI mode mainly written in Rust.
+# Fluent Bit Filter WASM Plugin
 
 ## Prerequisites
 
 * Rust
-  * rustc 1.89.0 (fe5b13d68 2022-05-18)
+  * rustc 1.89.0
 * [rustup](https://rustup.rs/) (For preparing rust compiler and toolchains)
 
 ## How to build
